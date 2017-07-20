@@ -1,1 +1,1 @@
-web: scrapy crawl assessor followall
+web: scrapy crawl assessor 
