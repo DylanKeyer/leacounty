@@ -1,1 +1,1 @@
-web: scrapy crawl assessor $PORT
+web: scrapy crawl assessor followall
