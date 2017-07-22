@@ -17,6 +17,7 @@ class MongoDBPipeline(object):
         
         db = connection[settings['MONGO_DATABASE']]
         self.collection = db[settings['MONGO_COLLECTION']]
+        self.collection.create_index('PropertyCode', unique=True)
 
     def process_item(self, item, spider):
         valid = True
@@ -26,6 +27,6 @@ class MongoDBPipeline(object):
                 raise DropItem("Missing {0}!".format(data))
                 logging.info('Property was missing {0}'.format(data))
         if valid:
-            self.collection.insert_one(dict(item))
+            self.collection.update(dict(item), upsert=True)
             logging.info("Property added to MongoDB database!")
         return item

@@ -1,0 +1,62 @@
+INFO:scrapy.utils.log:Scrapy 1.4.0 started (bot: newmexico)
+INFO:scrapy.utils.log:Overridden settings: {'ROBOTSTXT_OBEY': True, 'BOT_NAME': 'newmexico', 'SPIDER_MODULES': ['newmexico.spiders'], 'LOG_LEVEL': 'INFO', 'DOWNLOAD_DELAY': 1, 'NEWSPIDER_MODULE': 'newmexico.spiders'}
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['newmexico.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET http://liveweb.leacounty-nm.org/robots.txt> (failed 1 times): 503 Service Unavailable
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET http://liveweb.leacounty-nm.org/robots.txt> (failed 2 times): 503 Service Unavailable
+DEBUG:scrapy.downloadermiddlewares.retry:Gave up retrying <GET http://liveweb.leacounty-nm.org/robots.txt> (failed 3 times): 503 Service Unavailable
+DEBUG:scrapy.core.engine:Crawled (503) <GET http://liveweb.leacounty-nm.org/robots.txt> (referer: None)
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET http://liveweb.leacounty-nm.org/assessor.aspx?source=assessor&page=optOwner&searchterm=1> (failed 1 times): 503 Service Unavailable
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET http://liveweb.leacounty-nm.org/assessor.aspx?source=assessor&page=optOwner&searchterm=1> (failed 2 times): 503 Service Unavailable
+DEBUG:scrapy.downloadermiddlewares.retry:Gave up retrying <GET http://liveweb.leacounty-nm.org/assessor.aspx?source=assessor&page=optOwner&searchterm=1> (failed 3 times): 503 Service Unavailable
+DEBUG:scrapy.core.engine:Crawled (503) <GET http://liveweb.leacounty-nm.org/assessor.aspx?source=assessor&page=optOwner&searchterm=1> (referer: None)
+INFO:scrapy.spidermiddlewares.httperror:Ignoring response <503 http://liveweb.leacounty-nm.org/assessor.aspx?source=assessor&page=optOwner&searchterm=1>: HTTP status code is not handled or not allowed
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 1530,
+ 'downloader/request_count': 6,
+ 'downloader/request_method_count/GET': 6,
+ 'downloader/response_bytes': 2838,
+ 'downloader/response_count': 6,
+ 'downloader/response_status_count/503': 6,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 7, 22, 16, 50, 15, 429166),
+ 'httperror/response_ignored_count': 1,
+ 'httperror/response_ignored_status_count/503': 1,
+ 'log_count/INFO': 8,
+ 'response_received_count': 2,
+ 'retry/count': 4,
+ 'retry/max_reached': 2,
+ 'retry/reason_count/503 Service Unavailable': 4,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2017, 7, 22, 16, 50, 6, 65221)}
+INFO:scrapy.core.engine:Spider closed (finished)

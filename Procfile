@@ -1,1 +1,1 @@
-web: scrapy crawl assessor 
+worker: scrapy crawl assessor 
